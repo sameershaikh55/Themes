@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap"
+			rel="stylesheet"
+		/>
+		<title>Theme</title>
+
+		<style>
+			* {
+				margin: 0%;
+				padding: 0%;
+				font-family: "Poppins", sans-serif;
+			}
+
+			/* ======== AFTER ANIMATION (HEADING BOTTOM BORDER) START =========== */
+			.after_animation_container {
+				text-align: center;
+			}
+
+			.after_animation_container h1:after {
+				position: absolute;
+				content: "";
+				background: #493238;
+				width: 60px;
+				height: 3px;
+				left: 0px;
+				right: 0;
+				margin: 0px auto;
+				bottom: 90%;
+				transition: all 500ms ease;
+				-webkit-mask-image: linear-gradient(
+					-75deg,
+					rgba(244, 55, 55, 0.24) 50%,
+					#f43737 50%,
+					rgba(0, 0, 0, 1) 70%
+				);
+				-webkit-mask-size: 200%;
+				animation: shine 2s infinite;
+			}
+
+			@keyframes shine {
+				from {
+					-webkit-mask-position: 150%;
+				}
+
+				to {
+					-webkit-mask-position: -50%;
+				}
+			}
+			/* ======== AFTER ANIMATION (HEADING BOTTOM BORDER) END =========== */
+
+			/*==================== BUTTON ANIMATION START ====================*/
+			.wrapper {
+				left: 50%;
+				transform: translateX(42%);
+			}
+
+			a {
+				display: block;
+				width: 200px;
+				height: 40px;
+				line-height: 40px;
+				font-size: 18px;
+				font-family: sans-serif;
+				text-decoration: none;
+				color: black;
+				border: 2px solid black;
+				letter-spacing: 2px;
+				text-align: center;
+				position: relative;
+				transition: all 0.35s;
+			}
+
+			a span {
+				position: relative;
+				z-index: 2;
+			}
+
+			a:after {
+				position: absolute;
+				content: "";
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 0;
+				background: black;
+				transition: all 0.35s;
+			}
+
+			a:hover {
+				color: #fff;
+			}
+
+			a:hover:after {
+				height: 100%;
+			}
+			/*==================== BUTTON ANIMATION END ====================*/
+
+			/*==================== FLIP BUTTON ANIMATION START ====================*/
+			.flipBtnContainer {
+				left: 50%;
+				transform: translateX(42%);
+			}
+
+			.btn-flip {
+				opacity: 1;
+				outline: 0;
+				color: #fff;
+				line-height: 40px;
+				position: relative;
+				text-align: center;
+				letter-spacing: 1px;
+				display: inline-block;
+				text-decoration: none;
+				font-family: "Open Sans";
+				text-transform: uppercase;
+			}
+			.btn-flip:hover:after {
+				opacity: 1;
+				transform: translateY(0) rotateX(0);
+			}
+			.btn-flip:hover:before {
+				opacity: 0;
+				transform: translateY(50%) rotateX(90deg);
+			}
+			.btn-flip:after {
+				top: 0;
+				left: 0;
+				opacity: 0;
+				width: 100%;
+				color: #323237;
+				display: block;
+				transition: 0.5s;
+				position: absolute;
+				background: #adadaf;
+				content: attr(data-back);
+				transform: translateY(-50%) rotateX(90deg);
+			}
+			.btn-flip:before {
+				top: 0;
+				left: 0;
+				opacity: 1;
+				color: #adadaf;
+				display: block;
+				padding: 0 30px;
+				line-height: 40px;
+				transition: 0.5s;
+				position: relative;
+				background: #323237;
+				content: attr(data-front);
+				transform: translateY(0) rotateX(0);
+			}
+			/*==================== FLIP BUTTON ANIMATION END ====================*/
+
+			/*==================== BLOB BUTTON START ====================*/
+			*:before,
+			*:after {
+				box-sizing: border-box;
+				margin: 0;
+				padding: 0;
+			}
+			.buttons {
+				text-align: center;
+				border-radius: 30px;
+			}
+			.blob-btn {
+				z-index: 1;
+				position: relative;
+				padding: 20px 46px;
+				text-align: center;
+				text-transform: uppercase;
+				color: black;
+				font-size: 16px;
+				font-weight: bold;
+				background-color: transparent;
+				outline: none;
+				border: none;
+				transition: color 0.5s;
+				cursor: pointer;
+				border-radius: 30px;
+			}
+			.blob-btn:before {
+				content: "";
+				z-index: 1;
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				border: 2px solid black;
+				border-radius: 30px;
+			}
+			.blob-btn:after {
+				content: "";
+				z-index: -2;
+				position: absolute;
+				left: 3px;
+				top: 3px;
+				width: 100%;
+				height: 100%;
+				transition: all 0.3s 0.2s;
+				border-radius: 30px;
+			}
+			.blob-btn:hover {
+				color: #fff;
+				border-radius: 30px;
+			}
+			.blob-btn:hover:after {
+				transition: all 0.3s;
+				left: 0;
+				top: 0;
+				border-radius: 30px;
+			}
+			.blob-btn__inner {
+				z-index: -1;
+				overflow: hidden;
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				border-radius: 30px;
+				background: #fff;
+			}
+			.blob-btn__blobs {
+				position: relative;
+				display: block;
+				height: 100%;
+				filter: url("#goo");
+			}
+			.blob-btn__blob {
+				position: absolute;
+				top: 2px;
+				width: 25%;
+				height: 100%;
+				background: black;
+				border-radius: 100%;
+				transform: translate3d(0, 150%, 0) scale(1.7);
+				transition: transform 0.45s;
+			}
+			.blob-btn__blob:nth-child(1) {
+				left: 0%;
+				transition-delay: 0s;
+			}
+			.blob-btn__blob:nth-child(2) {
+				left: 30%;
+				transition-delay: 0.08s;
+			}
+			.blob-btn__blob:nth-child(3) {
+				left: 60%;
+				transition-delay: 0.16s;
+			}
+			.blob-btn__blob:nth-child(4) {
+				left: 90%;
+				transition-delay: 0.24s;
+			}
+			.blob-btn:hover .blob-btn__blob {
+				transform: translateZ(0) scale(1.7);
+			}
+			/*==================== BLOB BUTTON END ====================*/
+
+			/*==================== BUTTON 4RTH ANIMATION START ====================*/
+			.container {
+				width: 400px;
+				height: 400px;
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%, -50%);
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			.center {
+				width: 180px;
+				height: 60px;
+				position: absolute;
+			}
+
+			.BorderAnimtionbtn {
+				width: 180px;
+				height: 60px;
+				cursor: pointer;
+				background: transparent;
+				border: 1px solid white;
+				outline: none;
+				transition: 1s ease-in-out;
+			}
+
+			.container svg {
+				position: absolute;
+				left: 0;
+				top: 0;
+				fill: none;
+				stroke: black;
+				stroke-dasharray: 150 480;
+				stroke-dashoffset: 150;
+				transition: 1s ease-in-out;
+			}
+
+			.BorderAnimtionbtn:hover {
+				transition: 1s ease-in-out;
+				background: gray;
+			}
+
+			.BorderAnimtionbtn:hover svg {
+				stroke-dashoffset: -480;
+			}
+
+			.BorderAnimtionbtn span {
+				color: black;
+				font-size: 18px;
+				font-weight: 100;
+			}
+			/*==================== BUTTON 4RTH ANIMATION END ====================*/
+
+			/*==================== BUTTON 5TH ANIMATION START ====================*/
+			.btn5thContainer {
+				display: flex;
+				justify-content: center;
+			}
+
+			.draw-border {
+				box-shadow: inset 0 0 0 4px #58afd1;
+				color: #58afd1;
+				transition: color 0.25s 0.0833333333s;
+				position: relative;
+			}
+			.draw-border::before,
+			.draw-border::after {
+				border: 0 solid transparent;
+				box-sizing: border-box;
+				content: "";
+				pointer-events: none;
+				position: absolute;
+				width: 0;
+				height: 0;
+				bottom: 0;
+				right: 0;
+			}
+			.draw-border::before {
+				border-bottom-width: 4px;
+				border-left-width: 4px;
+			}
+			.draw-border::after {
+				border-top-width: 4px;
+				border-right-width: 4px;
+			}
+			.draw-border:hover {
+				color: #ffe593;
+			}
+			.draw-border:hover::before,
+			.draw-border:hover::after {
+				border-color: #ffe593;
+				transition: border-color 0s, width 0.25s, height 0.25s;
+				width: 100%;
+				height: 100%;
+			}
+			.draw-border:hover::before {
+				transition-delay: 0s, 0s, 0.25s;
+			}
+			.draw-border:hover::after {
+				transition-delay: 0s, 0.25s, 0s;
+			}
+			.btn5th {
+				background: none;
+				border: none;
+				cursor: pointer;
+				line-height: 1.5;
+				font: 700 1.2rem "Roboto Slab", sans-serif;
+				padding: 1em 2em;
+				letter-spacing: 0.05rem;
+			}
+			.btn5th:focus {
+				outline: 2px dotted #55d7dc;
+			}
+			/*==================== BUTTON 5TH ANIMATION END ====================*/
+
+			/*==================== BUTTON 6TH ANIMATION START ====================*/
+			.btn6th {
+				border: none;
+				display: block;
+				text-align: center;
+				cursor: pointer;
+				text-transform: uppercase;
+				outline: none;
+				overflow: hidden;
+				position: relative;
+				color: #fff;
+				font-weight: 700;
+				font-size: 15px;
+				background-color: #222;
+				padding: 17px 60px;
+				margin: 0 auto;
+				box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+			}
+
+			.btn6th span {
+				position: relative;
+				z-index: 1;
+			}
+
+			.btn6th:after {
+				content: "";
+				position: absolute;
+				left: 0;
+				top: 0;
+				height: 490%;
+				width: 140%;
+				background: #78c7d2;
+				-webkit-transition: all 0.5s ease-in-out;
+				transition: all 0.5s ease-in-out;
+				-webkit-transform: translateX(-98%) translateY(-25%) rotate(45deg);
+				transform: translateX(-98%) translateY(-25%) rotate(45deg);
+			}
+
+			.btn6th:hover:after {
+				-webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
+				transform: translateX(-9%) translateY(-25%) rotate(45deg);
+			}
+			/*==================== BUTTON 6TH ANIMATION END ====================*/
+
+			/*==================== BUTTON 7TH ANIMATION START ====================*/
+			.container7th {
+				display: flex;
+				justify-content: center;
+			}
+
+			.button7th {
+				position: relative;
+				display: inline-block;
+				cursor: pointer;
+				outline: none;
+				border: 0;
+				vertical-align: middle;
+				text-decoration: none;
+				background: transparent;
+				padding: 0;
+				font-size: inherit;
+				font-family: inherit;
+			}
+			.button7th.learn-more {
+				width: 12rem;
+				height: auto;
+			}
+
+			.button7th.learn-more .circle {
+				transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+				position: relative;
+				display: block;
+				margin: 0;
+				width: 3rem;
+				height: 3rem;
+				background: #282936;
+				border-radius: 1.625rem;
+			}
+
+			.button7th.learn-more .circle .icon {
+				transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				margin: auto;
+				background: #fff;
+			}
+
+			.button7th.learn-more .circle .icon.arrow {
+				transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+				left: 0.625rem;
+				width: 1.125rem;
+				height: 0.125rem;
+				background: none;
+			}
+
+			.button7th.learn-more .circle .icon.arrow::before {
+				position: absolute;
+				content: "";
+				top: -0.25rem;
+				right: 0.0625rem;
+				width: 0.625rem;
+				height: 0.625rem;
+				border-top: 0.125rem solid #fff;
+				border-right: 0.125rem solid #fff;
+				transform: rotate(45deg);
+			}
+
+			.button7th.learn-more .button-text {
+				transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				padding: 0.75rem 0;
+				margin: 0 0 0 1.85rem;
+				color: #282936;
+				font-weight: 700;
+				line-height: 1.6;
+				text-align: center;
+				text-transform: uppercase;
+			}
+
+			.button7th:hover .circle {
+				width: 100%;
+			}
+
+			.button7th:hover .circle .icon.arrow {
+				background: #fff;
+				transform: translate(1rem, 0);
+			}
+
+			.button7th:hover .button-text {
+				color: #fff;
+			}
+			/*==================== BUTTON 7TH ANIMATION END ====================*/
+		</style>
+	</head>
+	<body>
+		<!--===================== THEME NUMBER # 1 START =====================-->
+		<div class="after_animation_container">
+			<h1>My Heading</h1>
+		</div>
+		<!--===================== THEME NUMBER # 1 END =====================-->
+
+		<br />
+		<hr />
+		<br />
+
+		<!--===================== THEME NUMBER # 2 START =====================-->
+		<div class="wrapper">
+			<a href="#"><span>Hover Me!</span></a>
+		</div>
+		<!--===================== THEME NUMBER # 2 END =====================-->
+
+		<br />
+		<hr />
+		<br />
+
+		<!--===================== FLIP BUTTON # 3 START =====================-->
+		<div class="flipBtnContainer">
+			<a href="#" class="btn-flip" data-back="Back" data-front="Front"></a>
+		</div>
+		<!--===================== FLIP BUTTON # 3 END =====================-->
+
+		<br />
+		<hr />
+		<br />
+
+		<!--===================== BLOB BUTTON START  =====================-->
+		<div class="buttons">
+			<button class="blob-btn">
+				Blob Button
+				<span class="blob-btn__inner">
+					<span class="blob-btn__blobs">
+						<span class="blob-btn__blob"></span>
+						<span class="blob-btn__blob"></span>
+						<span class="blob-btn__blob"></span>
+						<span class="blob-btn__blob"></span>
+					</span>
+				</span>
+			</button>
+			<br />
+		</div>
+		<!--===================== BLOB BUTTON END  =====================-->
+
+		<br />
+		<hr />
+		<br />
+
+		<!--===================== BUTTON 4RTH ANIMATION START =====================-->
+		<div class="container">
+			<div class="center">
+				<button class="BorderAnimtionbtn">
+					<svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
+						<polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
+						<polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
+					</svg>
+					<span>HOVER ME</span>
+				</button>
+			</div>
+		</div>
+		<!--===================== BUTTON 4RTH ANIMATION END =====================-->
+
+		<br />
+		<br />
+		<br />
+		<hr />
+		<br />
+
+		<!--===================== BUTTON 5TH ANIMATION START =====================-->
+		<div class="btn5thContainer">
+			<button class="btn5th draw-border">Draw Border</button>
+		</div>
+		<!--===================== BUTTON 5TH ANIMATION END =====================-->
+
+		<br />
+		<hr />
+		<br />
+
+		<!--===================== BUTTON 6TH ANIMATION START =====================-->
+		<div class="button6th_container">
+			<button class="btn6th"><span>Hover me!</span></button>
+		</div>
+		<!--===================== BUTTON 6TH ANIMATION END =====================-->
+
+		<br />
+		<hr />
+		<br />
+
+		<!--===================== BUTTON 7TH ANIMATION START =====================-->
+		<div class="container7th">
+			<button class="button7th learn-more">
+				<span class="circle" aria-hidden="true">
+					<span class="icon arrow"></span>
+				</span>
+				<span class="button-text">Learn More</span>
+			</button>
+		</div>
+		<!--===================== BUTTON 7TH ANIMATION END =====================-->
+
+		<br />
+		<hr />
+		<br />
+	</body>
+</html>
