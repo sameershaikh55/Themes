@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+		/>
+		<title>Header</title>
+		<style>
+			@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+			* {
+				padding: 0%;
+				margin: 0%;
+				box-sizing: border-box;
+				font-family: "Lato", sans-serif;
+			}
+
+			body {
+				min-height: 200vh;
+				color: white;
+				background-color: #000000;
+			}
+
+			.NavbarContainer {
+				position: fixed;
+				left: 0%;
+				top: 0%;
+				width: 100%;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				padding: 25px 100px;
+				transition: 0.7s;
+				z-index: 10000;
+			}
+
+			.NavbarContainer h1 {
+				position: relative;
+				font-weight: 700;
+				font-size: 30px;
+				letter-spacing: 3px;
+				transition: 0.7s;
+			}
+
+			.NavbarContainer ul {
+				position: relative;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				transition: 0.7s;
+			}
+
+			.NavbarContainer ul li {
+				position: relative;
+				list-style-type: none;
+				transition: 0.7s;
+			}
+
+			.NavbarContainer ul li a {
+				margin: 0px 20px;
+				font-weight: 600px;
+				letter-spacing: 2px;
+				text-decoration: none;
+				color: white;
+				transition: 0.7s;
+			}
+
+			.NavbarContainer.sticky {
+				padding: 10px 100px;
+				background-color: white;
+			}
+
+			.NavbarContainer.sticky ul li a {
+				color: black;
+			}
+
+			.NavbarContainer.sticky h1 {
+				color: black;
+				font-weight: 600px;
+				font-size: 30px;
+				letter-spacing: 3px;
+			}
+
+			.BGimg {
+				height: 100%;
+				width: 100%;
+			}
+
+			.HideClass {
+				display: none;
+			}
+
+			@media screen and (max-width: 1000px) {
+				.NavbarContainer,
+				.NavbarContainer.sticky {
+					padding: 25px 50px;
+				}
+				.NavbarContainer h1,
+				.NavbarContainer.sticky h1 {
+					font-size: 22px;
+				}
+			}
+
+			@media screen and (max-width: 1024px) {
+				.NavbarContainer,
+				.NavbarContainer.sticky {
+					padding: 25px 60px;
+				}
+			}
+
+			@media screen and (max-width: 900px) {
+				.NavbarContainer.sticky {
+					background-color: #000000;
+				}
+				.HideClass {
+					display: block;
+				}
+				.NavbarContainer.sticky .HideClass i {
+					color: white;
+				}
+				.NavbarContainer.sticky h1 {
+					color: white;
+				}
+				.NavbarContainer ul {
+					display: none;
+				}
+			}
+
+			@media screen and (max-width: 800px) {
+				.NavbarContainer,
+				.NavbarContainer.sticky {
+					padding: 20px 15px;
+				}
+			} ;
+		</style>
+	</head>
+	<body>
+		<div class="NavbarContainer">
+			<h1>SaymTech</h1>
+			<!-- HAMBURGER START -->
+			<div class="HideClass"><i class="fa fa-bars fa-2x"></i></div>
+			<!-- HAMBURGER END -->
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li><a href="#">About</a></li>
+				<li><a href="#">Service</a></li>
+				<li><a href="#">Contact</a></li>
+				<li><a href="#">Portfolio</a></li>
+			</ul>
+		</div>
+		<img
+			class="BGimg"
+			src="https://images.unsplash.com/photo-1515199967007-46e047fffd71?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=975&q=80"
+			alt=""
+		/>
+		<script>
+			window.addEventListener("scroll", function () {
+				var header = document.querySelector(".NavbarContainer");
+				header.classList.toggle("sticky", window.scrollY > 100);
+			});
+		</script>
+	</body>
+</html>
