@@ -20,9 +20,10 @@
 			body {
 				min-height: 200vh;
 				color: white;
-				background-color: #000000;
+				/* background-color: #000000; */
 			}
 
+			/* ==== TOP NAVBAR START ==== */
 			.NavbarContainer {
 				position: fixed;
 				left: 0%;
@@ -83,11 +84,6 @@
 				letter-spacing: 3px;
 			}
 
-			.BGimg {
-				height: 100%;
-				width: 100%;
-			}
-
 			.HideClass {
 				display: none;
 			}
@@ -133,10 +129,78 @@
 				.NavbarContainer.sticky {
 					padding: 20px 15px;
 				}
-			} ;
+			}
+			/* ==== TOP NAVBAR END ==== */
+
+			/* BG IMAGE START */
+			.BGimg {
+				height: 100%;
+				width: 100%;
+			}
+			/* BG IMAGE END */
+
+			:root {
+				--grey-dark-1: #ccc;
+				--color-primary: green;
+				--color-secondary: red;
+				--grey-light-1: blue;
+			}
+			.sidebar {
+				background-color: var(--grey-dark-1);
+				flex: 0 0 18%;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+			}
+			.side-nav {
+				font-size: 1, 4rem;
+				list-style: none;
+				margin-top: 3rem;
+			}
+			.side-nav__item {
+				position: relative;
+			}
+			.side-nav__item:not(:last-child) {
+				margin-bottom: 1rem;
+			}
+			.side-nav__item::before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 3px;
+				height: 100%;
+				background-color: var(--color-primary);
+				transform: scaleY(0);
+				transition: transform 0.2s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s,
+					background-color 0.2s;
+				transform-origin: bottom;
+			}
+			.side-nav__item:hover::before,
+			.side-nav__item--active::before {
+				transform: scaleY(1);
+				width: 100%;
+				color: white;
+			}
+			.side-nav__item:active::before {
+				background-color: var(--color-secondary);
+			}
+			.side-nav__link:link,
+			.side-nav :visited {
+				text-decoration: none;
+				text-transform: uppercase;
+				padding: 1.5em 3rem;
+				display: block;
+				color: var(--grey-light-1);
+				display: flex;
+				align-items: center;
+				position: relative;
+				z-index: 100;
+			}
 		</style>
 	</head>
 	<body>
+		<!-- ======== TOP NAVBAR START =========== -->
 		<div class="NavbarContainer">
 			<h1>SaymTech</h1>
 			<!-- HAMBURGER START -->
@@ -150,13 +214,48 @@
 				<li><a href="#">Portfolio</a></li>
 			</ul>
 		</div>
+		<!-- ======== TOP NAVBAR END =========== -->
+
+		<!-- =======  BACKGROUND IMAGE START  ======= -->
 		<img
 			class="BGimg"
 			src="https://images.unsplash.com/photo-1515199967007-46e047fffd71?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=975&q=80"
 			alt=""
 		/>
+		<!-- =======  BACKGROUND IMAGE END  ======= -->
+
+		<!-- ========== SIDEBAR START =========== -->
+		<nav class="sidebar">
+			<ul class="side-nav">
+				<li class="side-nav__item side-nav__item--active">
+					<a href="" class="side-nav__link">
+						<span>Hotel</span>
+					</a>
+				</li>
+
+				<li class="side-nav__item">
+					<a href="" class="side-nav__link">
+						<span>Flight</span>
+					</a>
+				</li>
+
+				<li class="side-nav__item">
+					<a href="" class="side-nav__link">
+						<span>Car rental</span>
+					</a>
+				</li>
+
+				<li class="side-nav__item">
+					<a href="" class="side-nav__link">
+						<span>Tours</span>
+					</a>
+				</li>
+			</ul>
+		</nav>
+		<!-- ========== SIDEBAR END =========== -->
+
 		<script>
-			window.addEventListener("scroll", function () {
+			window.addEvenistener("scroll", function () {
 				var header = document.querySelector(".NavbarContainer");
 				header.classList.toggle("sticky", window.scrollY > 100);
 			});

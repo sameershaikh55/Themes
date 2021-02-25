@@ -520,7 +520,7 @@
 			}
 			/*==================== BUTTON 7TH ANIMATION END ====================*/
 
-			/*==================== BUTTON 7TH ANIMATION END ====================*/
+			/*==================== BAR ANIMATION START ====================*/
 			.bar {
 				height: 0.5rem;
 				width: 10rem;
@@ -567,7 +567,52 @@
 					-webkit-mask-position: -50%;
 				}
 			}
-			/*==================== BUTTON 7TH ANIMATION END ====================*/
+			/*==================== BAR ANIMATION END ====================*/
+
+			/*==================== 8HT BTN ANIMATION END ====================*/
+			.btn_8th {
+				font-size: 1.2rem;
+				border: none;
+				font-weight: 300;
+				text-transform: uppercase;
+				border-radius: 100px;
+				background-image: linear-gradient(to right bottom, red, darkred);
+				color: #fff;
+				position: relative;
+				overflow: hidden;
+				cursor: pointer;
+			}
+			.btn__visible_8th {
+				padding: 2rem 7.5rem;
+				display: inline-block;
+				transition: all 0.2s;
+				height: 100%;
+			}
+			.btn__invisible_8th {
+				display: inline-block;
+				position: absolute;
+				left: 0;
+				top: -100%;
+				padding: 2rem 0;
+				height: 100%;
+				width: 100%;
+				transition: all 0.2s;
+			}
+			.btn_8th:hover {
+				background-image: linear-gradient(to left, red, darkred);
+			}
+			.btn_8th:hover .btn__visible_8th {
+				transform: translateY(100%);
+			}
+			.btn_8th:hover .btn__invisible_8th {
+				top: 0;
+			}
+			.btn_8th:focus {
+				outline: none;
+				animation: pulsate 1s infinite;
+			}
+
+			/*==================== 8TH BTN ANIMATION END ====================*/
 		</style>
 	</head>
 	<body>
@@ -677,6 +722,25 @@
 		<hr />
 		<br />
 
+		<!--===================== BAR ANIMATION ANIMATION END =====================-->
+
 		<div class="bar"></div>
+
+		<!--===================== BAR ANIMATION ANIMATION END =====================-->
+
+		<br />
+		<hr />
+		<br />
+
+		<!--===================== BUTTON 8TH ANIMATION START =====================-->
+		<button class="btn_8th">
+			<span class="btn__visible_8th">Book now</span>
+			<span class="btn__invisible_8th">Only four rooms left</span>
+		</button>
+		<!--===================== BUTTON 8TH ANIMATION END =====================-->
+
+		<br />
+		<hr />
+		<br />
 	</body>
 </html>
