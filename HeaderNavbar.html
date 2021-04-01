@@ -88,6 +88,13 @@
 				display: none;
 			}
 
+			/* @media screen and (min-width: 1000px) {
+				.NavbarContainer.sticky {
+					background-color: white;
+					color: black;
+				}
+			} */
+
 			@media screen and (max-width: 1000px) {
 				.NavbarContainer,
 				.NavbarContainer.sticky {
@@ -103,6 +110,7 @@
 				.NavbarContainer,
 				.NavbarContainer.sticky {
 					padding: 25px 60px;
+					background-color: white;
 				}
 			}
 
@@ -257,7 +265,7 @@
 		<script>
 			window.addEvenistener("scroll", function () {
 				var header = document.querySelector(".NavbarContainer");
-				header.classList.toggle("sticky", window.scrollY > 100);
+				header.classList.toggle("sticky", window.scrollY > 1);
 			});
 		</script>
 	</body>

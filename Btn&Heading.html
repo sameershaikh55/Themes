@@ -611,8 +611,174 @@
 				outline: none;
 				animation: pulsate 1s infinite;
 			}
-
 			/*==================== 8TH BTN ANIMATION END ====================*/
+
+			/*==================== 9TH BTN ANIMATION START====================*/
+			.btn_9th .c-btn_9th {
+				display: inline-block;
+				border: 1px solid #000000;
+				background: none;
+				font-weight: 700;
+				text-transform: uppercase;
+				letter-spacing: 3px;
+				min-height: 50px;
+				color: #000000;
+				-webkit-transition: color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+				transition: color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+				padding: 0;
+				position: relative;
+				text-align: center;
+			}
+
+			.btn_9th .c-btn_9th::before {
+				position: absolute;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				right: 0;
+				content: "";
+				-webkit-transition: -webkit-transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+				transition: -webkit-transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+				transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+				transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+					-webkit-transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+				-webkit-transform: scale(0, 1);
+				-ms-transform: scale(0, 1);
+				transform: scale(0, 1);
+				-webkit-transform-origin: right center;
+				-ms-transform-origin: right center;
+				transform-origin: right center;
+				background: #000000;
+			}
+
+			.btn_9th .c-btn_9th span {
+				display: inline-block;
+				position: relative;
+				z-index: 2;
+			}
+
+			.btn_9th .c-btn_9th:hover {
+				color: #ffffff;
+			}
+
+			.btn_9th .c-btn_9th:hover::before {
+				-webkit-transform: scale(1, 1);
+				-ms-transform: scale(1, 1);
+				transform: scale(1, 1);
+				-webkit-transform-origin: left center;
+				-ms-transform-origin: left center;
+				transform-origin: left center;
+			}
+			/*==================== 9TH BTN ANIMATION END ====================*/
+
+			/*==================== 10TH BTN ANIMATION START ====================*/
+
+			.btn_10th li {
+				list-style: none;
+			}
+			.btn_10th li a {
+				position: relative;
+				display: block;
+				text-transform: uppercase;
+				border: none;
+				padding: 10px 20px;
+				text-decoration: none;
+				color: #262626;
+				font-family: inherit;
+				font-size: 18px;
+				font-weight: 600;
+				transition: 0.5s;
+				z-index: 1;
+			}
+			.btn_10th li a:before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				border-top: 2px solid #262626;
+				border-bottom: 2px solid #262626;
+				transform: scaleY(2);
+				opacity: 0;
+				transition: 0.3s;
+			}
+			.btn_10th li a:after {
+				content: "";
+				position: absolute;
+				top: 2px;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-color: #262626;
+				transform: scale(0);
+				opacity: 0;
+				transition: 0.3s;
+				z-index: -1;
+			}
+			.btn_10th li a:hover {
+				color: #fff;
+			}
+			.btn_10th li a:hover:before {
+				transform: scaleY(1);
+				opacity: 1;
+			}
+			.btn_10th li a:hover:after {
+				transform: scaleY(1);
+				opacity: 1;
+			}
+			/*==================== 10TH BTN ANIMATION END ====================*/
+
+			/*==================== 10TH BTN ANIMATION END ====================*/
+			.btn_11th_container {
+				background: #ffebee;
+				height: 100vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			.btn_11th_container .btn_11th {
+				cursor: pointer;
+				position: relative;
+				padding: 10px 20px;
+				background: white;
+				font-size: 28px;
+				border-top-right-radius: 10px;
+				border-bottom-left-radius: 10px;
+				transition: all 1s;
+			}
+			.btn_11th_container .btn_11th:after,
+			.btn_11th_container .btn_11th:before {
+				content: " ";
+				width: 10px;
+				height: 10px;
+				position: absolute;
+				border: 0px solid #fff;
+				transition: all 1s;
+			}
+			.btn_11th_container .btn_11th:after {
+				top: -1px;
+				left: -1px;
+				border-top: 5px solid black;
+				border-left: 5px solid black;
+			}
+			.btn_11th_container .btn_11th:before {
+				bottom: -1px;
+				right: -1px;
+				border-bottom: 5px solid black;
+				border-right: 5px solid black;
+			}
+			.btn_11th_container .btn_11th:hover {
+				border-top-right-radius: 0px;
+				border-bottom-left-radius: 0px;
+			}
+			.btn_11th_container .btn_11th:hover:before,
+			.btn_11th_container .btn_11th:hover:after {
+				width: 100%;
+				height: 100%;
+			}
+			/*==================== 10TH BTN ANIMATION END ====================*/
 		</style>
 	</head>
 	<body>
@@ -742,5 +908,31 @@
 		<br />
 		<hr />
 		<br />
+
+		<!--===================== BUTTON 9TH ANIMATION START =====================-->
+		<div class="btn_9th">
+			<button class="c-btn_9th"><span>Continue browsing</span></button>
+		</div>
+		<!--===================== BUTTON 9TH ANIMATION END =====================-->
+
+		<br />
+		<hr />
+		<br />
+
+		<!--===================== BUTTON 10TH ANIMATION START =====================-->
+		<ul class="btn_10th">
+			<li><a href="#">Home</a></li>
+		</ul>
+		<!--===================== BUTTON 10TH ANIMATION END =====================-->
+
+		<br />
+		<hr />
+		<br />
+
+		<!--===================== BUTTON 11TH ANIMATION START =====================-->
+		<div class="btn_11th_container">
+			<span class="btn_11th">Hover Me </span>
+		</div>
+		<!--===================== BUTTON 11TH ANIMATION END =====================-->
 	</body>
 </html>
