@@ -1,0 +1,87 @@
+/* ======================== */
+/* === PAGINATION START === */
+/* ======================== */
+.MuiPaginationItem-page.Mui-selected {
+	background: none !important;
+	color: #343a40;
+	font-weight: 600;
+}
+
+.MuiPaginationItem-outlined {
+	border: none !important;
+}
+
+.MuiPagination-root .MuiPaginationItem-icon {
+	display: none;
+}
+
+.MuiPagination-root .MuiPagination-ul {
+	flex-wrap: nowrap;
+	border: none !important;
+}
+
+.MuiPagination-root .MuiPagination-ul li {
+	border-left: 1px solid gray;
+	height: 16px;
+	display: flex;
+	align-items: center;
+}
+
+.MuiPagination-root .MuiPagination-ul li:first-child {
+	flex-basis: 100%;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	border-left: none;
+}
+
+.MuiPagination-root .MuiPagination-ul li:nth-child(2) {
+	border: none;
+}
+
+.MuiPagination-root .MuiPagination-ul li:first-child button::after {
+	content: "Previous";
+}
+
+.MuiPagination-root .MuiPagination-ul li:last-child {
+	flex-basis: 100%;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	border: none;
+}
+.MuiPagination-root .MuiPagination-ul li:last-child button::before {
+	content: "Next";
+}
+
+.MuiPagination-root .MuiPagination-ul li button:focus,
+.sam_btn:focus {
+	outline: none;
+	border: none;
+}
+
+/* CUSTOM BUTTON */
+.sam_btn {
+	background: transparent;
+	border: none;
+	outline: none;
+	border-radius: 4px;
+	padding: 2px 20px;
+	color: #595959;
+	font-size: 14px;
+	padding: 0px;
+	margin: 0px 5px;
+	margin-top: -1.5px;
+	padding: 0px 5px;
+}
+
+.sam_btn:hover {
+	background-color: rgba(0, 0, 0, 0.049);
+}
+
+.sam_btn:disabled {
+	color: #c2c2c2;
+}
+/* ======================== */
+/* === PAGINATION START === */
+/* ======================== */
