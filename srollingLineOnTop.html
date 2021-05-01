@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Scrolling Line at the top</title>
+		<style>
+			body {
+				background: linear-gradient(to right top, rgb(219, 9, 9) 50%, #000 50%)
+					no-repeat;
+				background-size: 100% calc(100% - 100vh + 10px);
+			}
+
+			body::before {
+				content: "";
+				position: fixed;
+				left: 0px;
+				top: 5px;
+				bottom: 0;
+				width: 100%;
+				background: #111;
+				z-index: -1;
+			}
+
+			.text {
+				font-size: 35px;
+				color: #fff;
+				text-align: center;
+				line-height: 200px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="text">
+			<h3>1</h3>
+			<h3>2</h3>
+			<h3>3</h3>
+			<h3>4</h3>
+			<h3>5</h3>
+			<h3>6</h3>
+			<h3>7</h3>
+			<h3>8</h3>
+			<h3>9</h3>
+			<h3>10</h3>
+			<h3>11</h3>
+			<h3>12</h3>
+			<h3>13</h3>
+			<h3>14</h3>
+			<h3>15</h3>
+		</div>
+	</body>
+</html>
