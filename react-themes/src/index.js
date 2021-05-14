@@ -7,8 +7,8 @@ import { QueryParams } from "./Themes/QueryParams";
 
 ReactDOM.render(
 	<React.StrictMode>
-		{/* <PaginationC /> */}
-		<QueryParams />
+		<PaginationC />
+		{/* <QueryParams /> */}
 	</React.StrictMode>,
 	document.getElementById("root")
 );
